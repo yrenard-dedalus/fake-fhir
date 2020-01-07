@@ -5,8 +5,12 @@ var app = express();
 var server_port = process.env.SERVER_PORT || 8080;
 var server_ip = process.env.SERVER_IP || '127.0.0.1';
 
-app.get('/', function(req, res) {
-    res.end('Hello Youtube!');
+app.get('/Organization', function(req, res) {
+    res.sendFile('./resources/organization.json', {root: __dirname});
+});
+
+app.get('/jwks.json', function(req, res){
+    res.sendFile('./resources/jwks.json', {root: __dirname});
 });
 
 app.listen(server_port, server_ip, function() {
