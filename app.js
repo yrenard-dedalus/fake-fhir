@@ -3,7 +3,7 @@ var app = express();
 
 // setup ports
 var server_port = process.env.SERVER_PORT || 8080;
-var server_ip = process.env.SERVER_IP || '127.0.0.1';
+var server_ip = process.env.SERVER_IP || '0.0.0.0';
 
 app.get('/Organization', function(req, res) {
     res.sendFile('./resources/organization.json', {root: __dirname});
